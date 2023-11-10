@@ -1,0 +1,498 @@
+titi
+titimondo
+En línea
+
+Deso — 27/06/2023 1:24
+// Declarar variables para contar las cantidades
+var negativos = 0;
+var positivos = 0;
+var multiplosDe15 = 0;
+var acumuladoPares = 0;
+
+// Solicitar al usuario ingresar los valores
+for (var i = 1; i <= 5; i++) {
+  var valor = parseFloat(prompt("Ingrese el valor #" + i + ":"));
+
+  // Verificar si el valor es negativo
+  if (valor < 0) {
+    negativos++;
+  }
+
+  // Verificar si el valor es positivo
+  if (valor > 0) {
+    positivos++;
+  }
+
+  // Verificar si el valor es múltiplo de 15
+  if (valor % 15 === 0) {
+    multiplosDe15++;
+  }
+
+  // Verificar si el valor es par
+  if (valor % 2 === 0) {
+    acumuladoPares += valor;
+  }
+}
+
+// Mostrar los resultados
+console.log("Cantidad de valores negativos: " + negativos);
+console.log("Cantidad de valores positivos: " + positivos);
+console.log("Cantidad de múltiplos de 15: " + multiplosDe15);
+console.log("Valor acumulado de los números pares: " + acumuladoPares);
+Deso — 27/06/2023 1:32
+https://www.tinkercad.com/things/f3HYuLYwWu5-terrific-leelo/editel?sharecode=Bz8PRveB3jqY3ziQQyM969Co0cZmJBVty9CLtdZRNVY
+Tinkercad
+Login | Tinkercad
+Imagen
+Imagen
+Imagen
+nefa — 27/06/2023 9:27
+la fotito JAJAJJAJA
+Deso — 27/06/2023 13:05
+xd
+Elii — 31/08/2023 18:59
+Imagen
+Imagen
+Elii — 31/08/2023 21:15
+import flet as ft
+from database import *
+
+def main(page: ft.Page):
+    def login(e):
+
+        sql = "select * from usuario where nombre = %s and contra = %s"
+        params = (usuarioDato.value, contraseñaDato.value)
+        cursor.execute(sql, params)
+        data = cursor.fetchone()
+
+        print(data)
+        page.update()
+
+    page.window_width = 400
+    page.window_height = 900
+    page.add(ft.Text("LoginVerificator"))
+
+    usuarioDato = ft.TextField(label="Usuario", hint_text="Ingrese usuario: ")
+    contraseñaDato = ft.TextField(label="Contraseña", hint_text="Ingrese contraseña", password=True, can_reveal_password=True)
+    boton = ft.ElevatedButton(text="Iniciar sesion", on_click=login)
+    page.add(usuarioDato, contraseñaDato, boton)
+
+    def registrar(e):
+
+        sql = "insert into usuario values (%s, %s)"
+        params = (usuarioDato.value, contraseñaDato.value)
+        cursor.execute(sql, params)
+        data = cursor.fetchall()
+
+        print(data)
+        conn.commit()
+        page.update()
+
+    botonRegistro = ft.ElevatedButton(text="Registrar", on_click=registrar)
+    page.add(botonRegistro)
+
+ft.app(target=main)
+Deso — 01/09/2023 13:39
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+Expandir
+bootstrap.html
+3 KB
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+Expandir
+bootstrap2.html
+2 KB
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+Expandir
+bootstrap3.html
+2 KB
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+Expandir
+bootstrap4.html
+3 KB
+Deso — 01/09/2023 14:54
+codigo de listas y objetos:
+var listaNumerosEjemplo = [2,4,6,-1,5,-4,0]
+
+
+/**
+ * Recibe
+ * - `listaDeNumeros`: una lista (array) de números.
+Expandir
+listas.js
+7 KB
+var listaPersonasEjemplo = [
+    {
+        "apellido": "Perez",
+        "nombre": "Juan",
+        "edad": 20,
+        "documento": 12345
+Expandir
+objetos.js
+6 KB
+Deso — 07/09/2023 15:01
+codigo de lista de productos:
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lista de Compras</title>
+Expandir
+lista-compras.html
+4 KB
+codigo lista de contactos:
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lista de Contactos</title>
+Expandir
+lista-contactos.html
+6 KB
+Deso — 07/09/2023 15:29
+codigo editor de texto:
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Editor de Texto</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <style type="text/css">
+        .bold {
+            font-weight: bold;
+        }
+        .italic {
+            font-style: italic;
+        }
+        .underline {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container my-1 my-sm-2 my-md-4 my-lg-5">
+    <h1>Editor de Texto</h1>
+    <p class="lead">El objetivo es construir un muy simple Editor de Texto donde se puedan aplicar distintos estilos a un texto.</p>
+    <h2 class="h3">Objetivos Adicionales</h2>
+    <ol>
+        <li>Agregar un nuevo botón con un estilo adicional (puede ser para aplicar un color al texto, por ejemplo).</li>
+        <li>Agregar la posibilidad de editar el texto, con un input para escribir un nuevo texto.</li>
+        <li>Mostrar el estado actual de cada estilo en el botón (si está activado o no). Puede ser cambiando el color o el texto del propio botón.</li>
+        <li>Agregar la funcionalidad de modificar el tamaño del texto.</li>
+    </ol>
+
+    <div class="card">
+        <div class="card-body">
+            <h2>Texto</h2>
+
+            <p class="texto" id="texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum auctor libero, vel imperdiet est. Etiam blandit facilisis ex, nec cursus metus pharetra quis. Fusce imperdiet nisl nibh, ac aliquet ante elementum vitae.</p>
+
+            <hr class="hr">
+
+            <h2>Opciones de Formato</h2>
+            <div class="row">
+                <div class="col-12 col-md-4 my-1">
+                    <button id="btn-negrita" class="btn d-block w-100 btn-primary" data-funcion="negrita">
+                        Bold (Negrita)
+                    </button>
+                </div>
+                <div class="col-12 col-md-4 my-1">
+                    <button id="btn-cursiva" class="btn d-block w-100 btn-primary" data-funcion="cursiva">
+                        Italic (Cursiva)
+                    </button>
+                </div>
+                <div class="col-12 col-md-4 my-1">
+                    <button id="btn-subrayado" class="btn d-block w-100 btn-primary" data-funcion="subrayado">
+                        Underline (Subrayado)
+                    </button>
+                </div>
+                <div class="col-12 col-md-4 my-1">
+                    <button id="btn-color" class="btn d-block w-100 btn-primary" data-funcion="color">
+                        Color (Cambiar Color)
+                    </button>
+                </div>
+                <div class="col-12 col-md-4 my-1">
+                    <input type="text" id="input-text" class="form-control" placeholder="Nuevo Texto">
+                </div>
+                <div class="col-12 col-md-4 my-1">
+                    <button id="btn-editar" class="btn d-block w-100 btn-primary" data-funcion="editar">
+                        Editar Texto
+                    </button>
+                </div>
+                <div class="col-12 col-md-4 my-1">
+                    <input type="number" id="input-tamaño" class="form-control" placeholder="Tamaño de Texto">
+                </div>
+                <div class="col-12 col-md-4 my-1">
+                    <button id="btn-tamaño" class="btn d-block w-100 btn-primary" data-funcion="tamaño">
+                        Cambiar Tamaño
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+<script type="text/javascript">
+    
+function funcionNegrita() {
+    const texto = document.getElementById('texto');
+    texto.classList.toggle('bold');
+    actualizarEstadoBoton('btn-negrita', texto.classList.contains('bold'));
+}
+
+
+function funcionCursiva() {
+    const texto = document.getElementById('texto');
+    texto.classList.toggle('italic');
+    actualizarEstadoBoton('btn-cursiva', texto.classList.contains('italic'));
+}
+
+
+... (52 líneas restantes)
+Contraer
+editor-texto.html
+7 KB
+Deso — 28/09/2023 16:34
+codigo de mapa
+from typing import Any, Optional, Union
+import math
+from flet_core import alignment
+import flet_core as ft
+from flet_core.container import Container
+from flet_core.control import OptionalNumber
+Expandir
+map.py
+7 KB
+https://www.youtube.com/watch?v=Z4jrpN0q9Wc&ab_channel=SriEdyNurcahyo
+YouTube
+Sri Edy Nurcahyo
+Flet Tutorial - Add OpenStreetMap In App
+Imagen
+Deso — 12/10/2023 18:46
+https://www.youtube.com/watch?v=FdcAcgRTWWQ
+YouTube
+Sri Edy Nurcahyo
+Flet Tutorial - Find Route Direction Two Places
+Imagen
+nefa — 12/10/2023 19:23
+NO SIRVE ESE VIDEO - en plan tio no es lo que queremos 
+Deso — 15/10/2023 19:06
+ERA UNA AYUDA TIO
+MANEJATE TU
+SORETE
+DEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Deso — 21/10/2023 23:57
+Mañana me pongo con lo de los contactos
+Isaias — 22/10/2023 0:06
+Y eso?
+Deso — 22/10/2023 16:50
+no amigo
+que haces vos aca
+base de datos de los contactos
+import flet as ft
+from db2 import *
+
+def main(page: ft.Page):
+
+    def registrar(e):
+Expandir
+contactos.py
+1 KB
+import mysql.connector
+
+conn= mysql.connector.connect(
+    host = "localhost",
+    database ="bajan",
+    user="root",
+Expandir
+db2.py
+1 KB
+a esos tenemos que ver la forma que se complete directamente cuando se registre el correo
+Deso — 23/10/2023 18:52
+registro y login de usuarios
+import mysql.connector
+
+conn= mysql.connector.connect(
+    host = "localhost",
+    database ="bajan",
+    user="root",
+Expandir
+db.py
+1 KB
+import flet as ft
+from db import *
+
+def main(page: ft.Page):
+    def login(e):
+
+Expandir
+registro.py
+2 KB
+Deso — 31/10/2023 15:39
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <title>Reproductor de Radio</title>
+</head>
+Expandir
+index.html
+1 KB
+/*
+It is not possible to do a reverse DNS from a browser yet.
+The first part (a normal dns resolve) could be done from a browser by doing DOH (DNS over HTTPs)
+to one of the providers out there. (google, quad9,...)
+So we have to fallback to ask a single server for a list.
+*/
+Expandir
+radio.js
+3 KB
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lista de Contactos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+<body>
+
+    <div class="container my-1 my-sm-2 my-md-4 my-lg-5">
+        <h1>Lista de Contactos</h1>
+        <p class="lead">El objetivo es construir una lista de contactos, ordenada alfabéticamente.</p>
+        <p>Sugerencia: usar la función <code>mostrarListado()</code> para dibujar en la pantalla el listado de contactos.</p>
+        <h2 class="h3">Objetivos Adicionales</h2>
+        <ol>
+            <li>Agregar opción de ordenar por nombre o por apellido el listado de contactos.</li>
+            <li>Agregar un nuevo campo teléfono al formulario y a la lista de contactos.</li>
+            <li>Agregar la opción de marcar como favorito un contacto. Luego, agregar opción para ver sólo los contactos favoritos.</li>
+        </ol>
+
+        <div class="card">
+            <div class="card-body">
+                <h2>Contactos</h2>
+
+                <div>
+                    <label for="ordenar-por">Ordenar por:</label>
+                    <select id="ordenar-por">
+                        <option value="nombre">Nombre</option>
+                        <option value="apellido">Apellido</option>
+                    </select>
+                </div>
+
+                <ul id="lista-contactos"></ul>
+
+                <hr class="hr">
+
+                <h2>Nuevo Contacto</h2>
+                <form id="form-contacto">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" name="nombre" id="input-nombre" placeholder="Nombre" aria-label="Nombre">
+                        <input type="text" class="form-control" name="apellido" id="input-apellido" placeholder="Apellido" aria-label="Apellido">
+                        <input type="text" class="form-control" name="telefono" id="input-telefono" placeholder="Teléfono" aria-label="Teléfono">
+                    </div>
+                    <button class="btn btn-primary" type="submit">Agregar Contacto</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        let contactos = [
+            {
+                nombre: 'Juan',
+                apellido: 'Pérez',
+                telefono: '123-456-7890',
+                favorito: false
+            },
+        ];
+
+        function agregarContacto(nombre, apellido, telefono) {
+            contactos.push({
+                nombre: nombre,
+                apellido: apellido,
+                telefono: telefono,
+                favorito: false
+            });
+            mostrarListado();
+        }
+
+        function mostrarListado() {
+            const listaContactos = document.getElementById('lista-contactos');
+            const ordenarPor = document.getElementById('ordenar-por').value;
+
+            listaContactos.innerHTML = '';
+
+            // Ordenar los contactos según la opción seleccionada
+            contactos.sort((a, b) => {
+                if (ordenarPor === 'nombre') {
+                    return a.nombre.localeCompare(b.nombre);
+                } else if (ordenarPor === 'apellido') {
+                    return a.apellido.localeCompare(b.apellido);
+                }
+            });
+
+            contactos.forEach(contacto => {
+                const item = document.createElement('li');
+                item.textContent = `${contacto.nombre} ${contacto.apellido} - Teléfono: ${contacto.telefono}`;
+
+                if (contacto.favorito) {
+                    item.innerHTML += ' <span class="badge bg-warning">Favorito</span>';
+                }
+
+                listaContactos.appendChild(item);
+            });
+        }
+
+        function handlerFormulario(e) {
+            e.preventDefault();
+            const inputNombre = document.getElementById('input-nombre');
+            const inputApellido = document.getElementById('input-apellido');
+            const inputTelefono = document.getElementById('input-telefono');
+
+            const nombre = inputNombre.value;
+            const apellido = inputApellido.value;
+            const telefono = inputTelefono.value;
+
+            inputNombre.value = '';
+            inputApellido.value = '';
+            inputTelefono.value = '';
+
+            agregarContacto(nombre, apellido, telefono);
+        }
+
+        document.getElementById('form-contacto').addEventListener('submit', handlerFormulario);
+
+        // Llama a mostrarListado() al cargar la página para mostrar los contactos iniciales
+        mostrarListado();
+    </script>
+</body>
+</html>
+lista-contactos.html
+6 KB
